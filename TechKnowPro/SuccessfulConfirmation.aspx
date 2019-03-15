@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SuccessfulRegister.aspx.cs" Inherits="TechKnowPro.SuccessfulRegister" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SuccessfulConfirmation.aspx.cs" Inherits="TechKnowPro.SuccessfulConfirmation" %>
 
 <!DOCTYPE html>
 
@@ -12,9 +12,8 @@
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
         <div>
-            <asp:Label ID="Label2" runat="server"></asp:Label>
+            <asp:Button ID="BtnBack" runat="server" Text="Back to Login Page" OnClick="BtnBack_Click" />
         </div>
-        <asp:Button ID="BtnGoBack" runat="server" OnClick="BtnGoBack_Click" Text="Go back to Login Page" />
     </form>
 </body>
 </html>

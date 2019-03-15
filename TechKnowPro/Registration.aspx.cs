@@ -8,6 +8,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using System.Net.Mail;
+using System.Net;
 
 namespace TechKnowPro
 {
@@ -39,8 +41,7 @@ namespace TechKnowPro
                 string inputconfirmpassword = TxtConfirmPassword.Text;
                 if(inputconfirmpassword == inputpassword)
                 {
-                    string registerquery = "INSERT INTO Customers(customer_id, first_name, last_name, address, email, password) " +
-                        "VALUES('" + inputuserid + "','" + inputfirstname + "','" +  inputlastname + "','" + inputaddress + "','" + inputemail + "','" + inputpassword + "')";
+                    string registerquery = "INSERT INTO Customers(user_id, first_name, last_name, address, email, password) VALUES('" + inputuserid + "','" + inputfirstname + "','" +  inputlastname + "','" + inputaddress + "','" + inputemail + "','" + inputpassword + "')";
                     SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
                     DBConnection.Open();
                     SqlCommand cmd = new SqlCommand(registerquery, DBConnection);
@@ -48,6 +49,10 @@ namespace TechKnowPro
                     {
                         cmd.ExecuteNonQuery();
                         DBConnection.Close();
+                        MailSend(inputemail);
+
+                        Session["email"] = inputemail;
+
                         Response.Redirect("SuccessfulRegister.aspx");
                     }
                 }
@@ -66,27 +71,6 @@ namespace TechKnowPro
         {
             Response.Redirect("LoginForm.aspx");
         }
-
-        /*protected void TxtEmail_TextChanged(object sender, EventArgs e)
-        {
-            string inputemail = TxtEmail.Text.ToLower();
-            string loginquery = "select * from Customers where email ='" + inputemail + "'";
-            SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
-            DBConnection.Open();
-            SqlCommand cmd = new SqlCommand(loginquery, DBConnection);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            DBConnection.Close();
-            if (dt.Rows.Count > 0)
-            {
-                
-            }
-            else
-            {
-                
-            }
-        }*/
 
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
@@ -111,6 +95,34 @@ namespace TechKnowPro
             {
                //lblTest.Text  = "This email has been used";
                 throw;
+            }
+        }
+
+        public void MailSend(string email)
+        {
+            var fromAddress = new MailAddress("techknowpro.gbc@gmail.com", "TechKnowPro");
+            var toAddress = new MailAddress(email);
+            const string fromPassword = "saobietduoc";
+            string url = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + VirtualPathUtility.ToAbsolute("~/SuccessfulConfirmation.aspx");
+            const string subject = "Confirmation Email";
+            string body = "This email has been used to create an account on TechKnowPro Service. \nClick this link to active your account. \n" +url+"?email="+email;
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
             }
         }
     }

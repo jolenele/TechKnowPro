@@ -10,7 +10,7 @@
 namespace TechKnowPro {
     
     
-    public partial class Home {
+    public partial class SuccessfulConfirmation {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,21 @@ namespace TechKnowPro {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// BtnLogout control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLogout;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// LblUsername control.
+        /// BtnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblUsername;
-        
-        /// <summary>
-        /// LblRole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblRole;
+        protected global::System.Web.UI.WebControls.Button BtnBack;
     }
 }

@@ -22,8 +22,6 @@
         <b>Getting Started<br />
         </b>&nbsp;<asp:Label ID="LblRole" runat="server"></asp:Label>
         <br />
-        <asp:Label ID="LblToSurvey" runat="server"></asp:Label>
-        <br />
     </form>
 </body>
 </html>
