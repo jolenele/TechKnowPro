@@ -49,13 +49,13 @@ namespace TechKnowPro {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// ddlIncident control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlIncident;
         
         /// <summary>
         /// rblTime control.
@@ -85,31 +85,31 @@ namespace TechKnowPro {
         protected global::System.Web.UI.WebControls.RadioButtonList rblResolution;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtComments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtComments;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// ckbContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox ckbContact;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// rblContactMethod control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblContactMethod;
         
         /// <summary>
         /// BtnSubmit control.

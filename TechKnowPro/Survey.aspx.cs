@@ -21,6 +21,11 @@ namespace TechKnowPro
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

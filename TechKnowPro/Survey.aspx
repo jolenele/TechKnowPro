@@ -37,57 +37,57 @@
             </tr>
         </table>
         <div>
-            <asp:DropDownList ID="DropDownList3" runat="server" Height="55px" Width="326px"></asp:DropDownList>
+            <asp:DropDownList ID="ddlIncident" runat="server" Height="55px" Width="326px" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
         </div>
         <div>
             <p>Please rate this incident by the following catagories</p>
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style4">Response Time</td>
-                    <td> <asp:CheckBoxList ID="CheckBoxList1" runat="server" RepeatDirection="Horizontal">
-                <asp:ListItem>Not Satisfied</asp:ListItem>
-                <asp:ListItem>Somewhat Satisfied</asp:ListItem>
-                <asp:ListItem>Satisfied</asp:ListItem>
-                <asp:ListItem>Completely Satisfied</asp:ListItem>
-            </asp:CheckBoxList>
+                    <td> <asp:RadioButtonList ID="rblTime" runat="server" Width="650px" RepeatDirection="Horizontal">
+                            <asp:ListItem>Not Satisfied</asp:ListItem> 
+                            <asp:ListItem>Somewhat Satisfied</asp:ListItem>
+                            <asp:ListItem>Satisfied</asp:ListItem>
+                            <asp:ListItem>Completely Satisfied</asp:ListItem>
+                        </asp:RadioButtonList>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Technician Efficiency</td>
                     <td>
-            <asp:CheckBoxList ID="CheckBoxList4" runat="server" RepeatDirection="Horizontal">
-                <asp:ListItem>Not Satisfied</asp:ListItem>
-                <asp:ListItem>Somewhat Satisfied</asp:ListItem>
-                <asp:ListItem>Satisfied</asp:ListItem>
-                <asp:ListItem>Completely Satisfied</asp:ListItem>
-            </asp:CheckBoxList>
+                        <asp:RadioButtonList ID="rblEfficiency" runat="server" Width="650px" RepeatDirection="Horizontal">
+                            <asp:ListItem>Not Satisfied</asp:ListItem> 
+                            <asp:ListItem>Somewhat Satisfied</asp:ListItem>
+                            <asp:ListItem>Satisfied</asp:ListItem>
+                            <asp:ListItem>Completely Satisfied</asp:ListItem>
+                        </asp:RadioButtonList>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Problem Resolution</td>
                     <td>
-            <asp:CheckBoxList ID="CheckBoxList5" runat="server" RepeatDirection="Horizontal">
-                <asp:ListItem>Not Satisfied</asp:ListItem>
-                <asp:ListItem>Somewhat Satisfied</asp:ListItem>
-                <asp:ListItem>Satisfied</asp:ListItem>
-                <asp:ListItem>Completely Satisfied</asp:ListItem>
-            </asp:CheckBoxList>
+                        <asp:RadioButtonList ID="rblResolution" runat="server" Width="650px" RepeatDirection="Horizontal">
+                            <asp:ListItem>Not Satisfied</asp:ListItem> 
+                            <asp:ListItem>Somewhat Satisfied</asp:ListItem>
+                            <asp:ListItem>Satisfied</asp:ListItem>
+                            <asp:ListItem>Completely Satisfied</asp:ListItem>
+                        </asp:RadioButtonList>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Additional Comments</td>
                     <td>
-                        <asp:TextBox ID="TextBox1" runat="server" Height="61px" TextMode="MultiLine" Width="469px"></asp:TextBox>
+                        <asp:TextBox ID="txtComments" runat="server" Height="61px" TextMode="MultiLine" Width="469px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:CheckBox ID="CheckBox1" runat="server" Text="Please contact me to discuss this incident" />
+                        <asp:CheckBox ID="ckbContact" runat="server" Text="Please contact me to discuss this incident" />
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
+                        <asp:RadioButtonList ID="rblContactMethod" runat="server" RepeatDirection="Horizontal">
                             <asp:ListItem>Contact via Email</asp:ListItem>
                             <asp:ListItem>Contact via phone</asp:ListItem>
                         </asp:RadioButtonList>
