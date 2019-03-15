@@ -31,20 +31,23 @@
             <tr>
                 <td class="auto-style2">Select a customer</td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="ddlCustomer" runat="server" DataSourceID="SqlDataSourceCustomer" DataTextField="name" DataValueField="Id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged">
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSourceCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Id, CONCAT(first_name,' ',last_name) AS name FROM Customers"></asp:SqlDataSource>
                 </td>
                 <td class="auto-style4">Report Date &amp; Time</td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtDateTime" runat="server" AutoPostBack="True"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Customer ID</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style4">Incident</td>
+                <td class="auto-style3">
+                    <asp:TextBox ID="txtCustomerID" runat="server" AutoPostBack="True"></asp:TextBox>
+                </td>
+                <td class="auto-style4">Incident #</td>
                 <td>
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtIncident" runat="server" AutoPostBack="True"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -52,7 +55,10 @@
                 <td class="auto-style3">&nbsp;</td>
                 <td class="auto-style4">Status</td>
                 <td>
-                    <asp:DropDownList ID="DropDownList2" runat="server" Height="22px" Width="127px">
+                    <asp:DropDownList ID="ddlStatus" runat="server" Height="22px" Width="127px">
+                        <asp:ListItem Selected="True">New</asp:ListItem>
+                        <asp:ListItem>In Progress</asp:ListItem>
+                        <asp:ListItem>Closed</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -60,13 +66,13 @@
         <p>
             Description of Problem</p>
         <p>
-            <asp:TextBox ID="TextBox3" runat="server" Height="77px" TextMode="MultiLine" Width="1301px"></asp:TextBox>
+            <asp:TextBox ID="txtDescription" runat="server" Height="77px" TextMode="MultiLine" Width="1301px"></asp:TextBox>
         </p>
         <table class="auto-style1">
             <tr>
                 <td class="auto-style5">Method of Contact</td>
                 <td>
-                    <asp:RadioButtonList ID="RadioButtonList1" runat="server" Height="25px" RepeatDirection="Horizontal" Width="340px">
+                    <asp:RadioButtonList ID="rblContact" runat="server" Height="25px" RepeatDirection="Horizontal" Width="340px">
                         <asp:ListItem>Email</asp:ListItem>
                         <asp:ListItem>Phone</asp:ListItem>
                         <asp:ListItem>In Person</asp:ListItem>
@@ -74,7 +80,7 @@
                 </td>
             </tr>
         </table>
-        <asp:Button ID="Button1" runat="server" Text="Submit" />
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btbSubmit_Click" />
     </form>
 </body>
 </html>

@@ -18,7 +18,7 @@ namespace TechKnowPro
                 if (Convert.ToString(Session["username"]) == "Admin")
                     LblRole.Text = "Go to Customers section to search customer information";
                 if (Convert.ToString(Session["username"]) == "Technician")
-                    LblRole.Text = "Go to Incidents to search and review client incident reports";
+                    LblRole.Text = "Go to <a href='CreateIncident.aspx'>Incidents</a> to search and review client incident reports";
                 else
                 {
                     LblRole.Text = "Go to <a href='ProfilePage.aspx'>Profile</a> to update your profile and/or customer information";
