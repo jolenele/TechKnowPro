@@ -39,7 +39,8 @@ namespace TechKnowPro
                 string inputconfirmpassword = TxtConfirmPassword.Text;
                 if(inputconfirmpassword == inputpassword)
                 {
-                    string registerquery = "INSERT INTO Customers(user_id, first_name, last_name, address, email, password) VALUES('" + inputuserid + "','" + inputfirstname + "','" +  inputlastname + "','" + inputaddress + "','" + inputemail + "','" + inputpassword + "')";
+                    string registerquery = "INSERT INTO Customers(customer_id, first_name, last_name, address, email, password) " +
+                        "VALUES('" + inputuserid + "','" + inputfirstname + "','" +  inputlastname + "','" + inputaddress + "','" + inputemail + "','" + inputpassword + "')";
                     SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
                     DBConnection.Open();
                     SqlCommand cmd = new SqlCommand(registerquery, DBConnection);

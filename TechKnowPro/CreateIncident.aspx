@@ -31,7 +31,7 @@
             <tr>
                 <td class="auto-style2">Select a customer</td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="ddlCustomer" runat="server" DataSourceID="SqlDataSourceCustomer" DataTextField="name" DataValueField="Id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlCustomer" runat="server" DataSourceID="SqlDataSourceCustomer" DataTextField="name" DataValueField="Id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSourceCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Id, CONCAT(first_name,' ',last_name) AS name FROM Customers"></asp:SqlDataSource>
                 </td>
