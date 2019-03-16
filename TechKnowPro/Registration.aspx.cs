@@ -35,13 +35,14 @@ namespace TechKnowPro
                 string inputuserid = TxtUserID.Text;
                 string inputfirstname = TxtFirstname.Text;
                 string inputlastname = TxtLastname.Text;
+                string inputname = inputfirstname + " " + inputlastname;
                 string inputaddress = TxtAddress.Text;
                 string inputemail = TxtEmail.Text.ToLower();
                 string inputpassword = TxtPassword.Text;
                 string inputconfirmpassword = TxtConfirmPassword.Text;
                 if(inputconfirmpassword == inputpassword)
                 {
-                    string registerquery = "INSERT INTO Customers(user_id, first_name, last_name, address, email, password) VALUES('" + inputuserid + "','" + inputfirstname + "','" +  inputlastname + "','" + inputaddress + "','" + inputemail + "','" + inputpassword + "')";
+                    string registerquery = "INSERT INTO Customers(user_id, username, first_name, last_name, address, email, password) VALUES('" + inputuserid + "','" + inputname + "','" + inputfirstname + "','" +  inputlastname + "','" + inputaddress + "','" + inputemail + "','" + inputpassword + "')";
                     SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
                     DBConnection.Open();
                     SqlCommand cmd = new SqlCommand(registerquery, DBConnection);
@@ -49,8 +50,9 @@ namespace TechKnowPro
                     {
                         cmd.ExecuteNonQuery();
                         DBConnection.Close();
-                        MailSend(inputfirstname,inputlastname,inputemail);
+                        MailSend(inputname,inputemail);
 
+                        Session["username"] = inputname;
                         Session["email"] = inputemail;
 
                         Response.Redirect("SuccessfulRegister.aspx");
@@ -98,14 +100,14 @@ namespace TechKnowPro
             }
         }
 
-        public void MailSend(string first_name, string last_name, string email)
+        public void MailSend(string name, string email)
         {
             var fromAddress = new MailAddress("techknowpro.gbc@gmail.com", "TechKnowPro");
             var toAddress = new MailAddress(email);
             const string fromPassword = "saobietduoc";
             string url = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + VirtualPathUtility.ToAbsolute("~/SuccessfulConfirmation.aspx");
             const string subject = "Confirmation Email";
-            string body = "Dear " + first_name + " " + last_name + " !" + "\nThis email has been used to create an account on TechKnowPro Service. \nClick this link to active your account. \n" +url+"?email="+email;
+            string body = "Dear " + name + " !" + "\nThis email has been used to create an account on TechKnowPro Service. \nClick this link to active your account. \n" +url+"?email="+email;
 
             var smtp = new SmtpClient
             {
