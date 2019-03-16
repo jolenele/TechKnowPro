@@ -33,14 +33,16 @@
             </tr>
         </table>
         <div>
-            <asp:DropDownList ID="ddlIncident" runat="server" Height="55px" Width="326px" OnSelectedIndexChanged="ddlIncident_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDSIncidentList" DataTextField="display" DataValueField="id">
+            <asp:DropDownList ID="ddlIncident" runat="server" Height="55px" Width="326px" OnSelectedIndexChanged="ddlIncident_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDStest" DataTextField="display" DataValueField="Id">
                 <asp:ListItem Value="0">- Select an incident -</asp:ListItem>
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDSIncidentList" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT id, concat('Incident for Product ', Product, ', ', Status, ', ', Report_Date_Time, ' - ', Brief) as display FROM [Incidents]">
+            <asp:SqlDataSource ID="SqlDStest" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                SelectCommand="SELECT [Id], concat('Incident for Product ', Product, ', ', Status, ', ', Report_Date_Time, ' - ', Brief) as display FROM [Incidents] WHERE ([Customer_ID] = @Customer_ID)">
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="lblCustomerID" Name="Customer_ID" PropertyName="Value" Type="Int32" />
+                    <asp:SessionParameter Name="Customer_ID" SessionField="user_id" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
+            
         </div>
         <div>
             <p>Please rate this incident by the following catagories</p>
