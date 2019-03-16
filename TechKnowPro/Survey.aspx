@@ -12,9 +12,6 @@
         .auto-style2 {
             width: 136px;
         }
-        .auto-style3 {
-            margin-left: 0px;
-        }
         .auto-style4 {
             width: 162px;
         }
@@ -28,16 +25,22 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">
-                    <asp:Label ID="Label1" runat="server" Text="Customer ID"></asp:Label>
+                    <asp:Label ID="lblCustomer" runat="server" Text="Customer ID"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="TxtCustomerID" runat="server" CssClass="auto-style3" OnTextChanged="TextBox1_TextChanged" Width="174px"></asp:TextBox>
+                    <asp:Label ID="lblCustomerID" runat="server"></asp:Label>
                 </td>
-                <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
             </tr>
         </table>
         <div>
-            <asp:DropDownList ID="ddlIncident" runat="server" Height="55px" Width="326px" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+            <asp:DropDownList ID="ddlIncident" runat="server" Height="55px" Width="326px" OnSelectedIndexChanged="ddlIncident_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDSIncidentList" DataTextField="display" DataValueField="id">
+                <asp:ListItem Value="0">- Select an incident -</asp:ListItem>
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDSIncidentList" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT id, concat('Incident for Product ', Product, ', ', Status, ', ', Report_Date_Time, ' - ', Brief) as display FROM [Incidents]">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="lblCustomerID" Name="Customer_ID" PropertyName="Value" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </div>
         <div>
             <p>Please rate this incident by the following catagories</p>
