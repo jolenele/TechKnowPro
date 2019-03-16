@@ -40,7 +40,7 @@
                     <td class="auto-style2">Firstname*</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TxtFirstname" runat="server" Width="180px"></asp:TextBox>
-                        <asp:RequiredFieldValidator CssClass="ErrorMessage" ID="rfvFirstname" runat="server" ErrorMessage="Firstname Required" ControlToValidate="TxtFirstname"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator CssClass="ErrorMessage" ID="rfvFirstname" runat="server" ErrorMessage="Firstname Required" ControlToValidate="TxtFirstname" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtFirstname" CssClass="ErrorMessage" Display="Dynamic" ErrorMessage="Firstname must contain only alphabet characters" ValidationExpression="^[a-zA-Z ]*$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -48,7 +48,7 @@
                     <td class="auto-style2">Lastname*</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TxtLastname" runat="server" CssClass="auto-style6" Width="180px"></asp:TextBox>
-                        <asp:RequiredFieldValidator CssClass="ErrorMessage" ID="rfvLastname" runat="server" ErrorMessage="Lastname Required" ControlToValidate="TxtLastname"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator CssClass="ErrorMessage" ID="rfvLastname" runat="server" ErrorMessage="Lastname Required" ControlToValidate="TxtLastname" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TxtLastname" CssClass="ErrorMessage" Display="Dynamic" ErrorMessage="Lastname must contain only alphabet characters" ValidationExpression="^[a-zA-Z ]*$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -71,8 +71,8 @@
                     <td class="auto-style2">Password*</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TxtPassword" runat="server" Width="180px" TextMode="Password"></asp:TextBox>
-                        <asp:RequiredFieldValidator CssClass="ErrorMessage" ID="rfvPassword" runat="server" ErrorMessage="Password Required" ControlToValidate="TxtPassword"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TxtPassword" CssClass="ErrorMessage" Display="Dynamic" ErrorMessage="Password must be 6 - 12 characters in length, contain at least 1 uppercase letter and 1 special character" ValidationExpression="^(?=.*[A-Z])(?=.*[@$!%*#?&amp;])[A-Za-z@$!%*#?&amp;]{6,12}$"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator CssClass="ErrorMessage" ID="rfvPassword" runat="server" ErrorMessage="Password Required" ControlToValidate="TxtPassword" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TxtPassword" CssClass="ErrorMessage" Display="Dynamic" ErrorMessage="Password must be 6 - 12 characters in length, contain at least 1 uppercase letter and 1 special character" ValidationExpression="^(?=.*[A-Z])(?=.*[@$!%*#?&amp;])[A-Za-z\d@$!%*#?&amp;]{6,12}$"></asp:RegularExpressionValidator>
                     </td>
                 <tr>
                     <td class="auto-style2">Confirm Password*</td>
