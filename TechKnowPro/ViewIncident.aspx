@@ -50,21 +50,21 @@
         <tr>
             <td class="auto-style2">Select a customer</td>
             <td>
-                <asp:DropDownList ID="ddlCustomer" runat="server" ToolTip="- Select User -" Width="149px" DataSourceID="SqlDataSourceViewIncident" DataTextField="name" DataValueField="Id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
+                <asp:DropDownList ID="ddlCustomer" runat="server" ToolTip="- Select User -" Width="149px" DataSourceID="SqlDataSourceViewIncident" DataTextField="name" DataValueField="user_id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
                     <asp:ListItem Value="0">- Select User -</asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSourceViewIncident" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], concat(first_name,' ', last_name) as name FROM [Customers]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSourceViewIncident" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [user_id], concat(first_name,' ', last_name) as name FROM [Customers]"></asp:SqlDataSource>
                 
             </td>
         </tr>
     </table>
         <div>
             <p>Incident List</p>
-            <asp:RadioButtonList ID="rbtnIncidentList" runat="server" DataSourceID="SqlDSIncidentList" DataValueField="Id" 
+            <asp:RadioButtonList ID="rbtnIncidentList" runat="server" DataSourceID="SqlDSIncidentList" DataValueField="id" 
                 OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" OnTextChanged="ddlCustomer_SelectedIndexChanged" DataTextField="display"></asp:RadioButtonList>
             <asp:SqlDataSource ID="SqlDSIncidentList" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], concat('Incident for Product ',Product,', ',Status,', ',Report_Date_Time,' - ', Brief) as display FROM [Incidents] WHERE ([Customer_ID] = @Customer_ID)">
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="ddlCustomer" Name="Customer_ID" PropertyName="SelectedValue" Type="Int32" />
+                    <asp:ControlParameter ControlID="ddlCustomer" Name="Customer_ID" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
             <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve" OnClick="btnRetrieve_Click" />
