@@ -98,7 +98,7 @@ namespace TechKnowPro
             }
         }
 
-        public void MailSend(string email)
+        public void MailSend(string first_name, string last_name, string email)
         {
             var fromAddress = new MailAddress("techknowpro.gbc@gmail.com", "TechKnowPro");
             var toAddress = new MailAddress(first_name, last_name, email);
