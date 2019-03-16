@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -53,7 +54,7 @@
             </td>
                 <td class="auto-style4">Customer ID</td>
                 <td>
-                    <asp:TextBox ID="txtCustomerID" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerID" runat="server" CssClass="readonly" ReadOnly="True"></asp:TextBox>
                 </td>
             </tr>
         </table>

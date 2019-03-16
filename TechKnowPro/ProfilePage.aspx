@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
     <style type="text/css">
         .auto-style2 {
             width: 113px;
@@ -24,7 +25,7 @@
                 <tr>
                     <td class="auto-style2">Your UserID</td>
                     <td>
-                        <asp:TextBox ID="TxtUserID" runat="server" ReadOnly="True" Width="180px"></asp:TextBox></td>
+                        <asp:TextBox ID="TxtUserID" runat="server" ReadOnly="True" Width="180px" CssClass="readonly"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Userame:</td>

@@ -89,6 +89,7 @@
     <Content Include="Registration.aspx" />
     <Content Include="SuccessfulConfirmation.aspx" />
     <Content Include="SurveyConfirmation.aspx" />
+    <Content Include="TermOfService.aspx" />
     <Content Include="ViewIncident.aspx" />
     <Content Include="ViewSurvey.aspx" />
     <Content Include="CreateIncident.aspx" />
@@ -183,6 +184,13 @@
     </Compile>
     <Compile Include="SurveyConfirmation.aspx.designer.cs">
       <DependentUpon>SurveyConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TermOfService.aspx.cs">
+      <DependentUpon>TermOfService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermOfService.aspx.designer.cs">
+      <DependentUpon>TermOfService.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewIncident.aspx.cs">
       <DependentUpon>ViewIncident.aspx</DependentUpon>

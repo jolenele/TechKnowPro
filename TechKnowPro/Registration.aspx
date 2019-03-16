@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -18,10 +19,6 @@
         .auto-style6 {
             margin-left: 0px;
         }
-        .ErrorMessage {
-            color: red;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -33,7 +30,7 @@
                 <tr>
                     <td class="auto-style2">Your UserID</td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="TxtUserID" runat="server" Enabled="False" ReadOnly="True" Width="180px"></asp:TextBox>
+                        <asp:TextBox ID="TxtUserID" runat="server" Enabled="False" ReadOnly="True" Width="180px" CssClass="readonly"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

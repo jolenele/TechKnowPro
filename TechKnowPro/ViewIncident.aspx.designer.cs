@@ -49,15 +49,6 @@ namespace TechKnowPro {
         protected global::System.Web.UI.WebControls.ListBox lbxIncidentList;
         
         /// <summary>
-        /// rbtnIncidentList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbtnIncidentList;
-        
-        /// <summary>
         /// SqlDSIncidentList control.
         /// </summary>
         /// <remarks>
