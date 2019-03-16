@@ -101,7 +101,7 @@ namespace TechKnowPro
         public void MailSend(string first_name, string last_name, string email)
         {
             var fromAddress = new MailAddress("techknowpro.gbc@gmail.com", "TechKnowPro");
-            var toAddress = new MailAddress(first_name, last_name, email);
+            var toAddress = new MailAddress(email);
             const string fromPassword = "saobietduoc";
             string url = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + VirtualPathUtility.ToAbsolute("~/SuccessfulConfirmation.aspx");
             const string subject = "Confirmation Email";
