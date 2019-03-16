@@ -11,16 +11,22 @@ namespace TechKnowPro
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string email= Convert.ToString(Session["email"]);
-            if (email != null)
+            string username = Convert.ToString(Session["username"]);
+            if (username != null)
             {
-                LblUsername.Text = email;
+                LblUsername.Text = username;
                 if (Convert.ToString(Session["username"]) == "Admin")
-                    LblRole.Text = "Go to <a href='CustomerInfo.aspx'>Customers</a> section to search customer information";
-                else if (Convert.ToString(Session["username"]) == "Technician")
-                    LblRole.Text = "Go to Incidents to search and review client incident reports";
+                    LblRole.Text = "Go to Customers section to search customer information";
+                if (Convert.ToString(Session["username"]) == "Technician")
+                {
+                    LblRole.Text = "Go to <a href='CreateIncident.aspx'>Incidents</a> to search and review client incident reports";
+                    LblToSurvey.Text = "Go to <a href='ViewIncident.aspx'>View Incidents</a> to search and review client incident reports";
+                }
                 else
+                {
                     LblRole.Text = "Go to <a href='ProfilePage.aspx'>Profile</a> to update your profile and/or customer information";
+                    LblToSurvey.Text = "Go to <a href='Survey.aspx'>Survey</a> to do survey";
+                }
             }
                 
             else
@@ -30,7 +36,6 @@ namespace TechKnowPro
         protected void BtnLogout_Click(object sender, EventArgs e)
         {
             Session.Remove("username");
-            Session.Remove("email");
             Response.Redirect("LoginForm.aspx");
         }
     }
