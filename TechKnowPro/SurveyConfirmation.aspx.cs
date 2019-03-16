@@ -14,9 +14,13 @@ namespace TechKnowPro
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btnReturn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Survey.aspn"); 
+            Response.Redirect("Survey.aspx"); 
+        }
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
         }
     }
 }
