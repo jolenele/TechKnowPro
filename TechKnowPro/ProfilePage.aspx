@@ -24,7 +24,7 @@
                 <tr>
                     <td class="auto-style2">Your UserID</td>
                     <td>
-                        <asp:TextBox ID="TxtUserID" runat="server" Enabled="False" ReadOnly="True" Width="180px"></asp:TextBox></td>
+                        <asp:TextBox ID="TxtUserID" runat="server" ReadOnly="True" Width="180px"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Userame:</td>
@@ -84,7 +84,7 @@
                 <tr>
                     <td class="auto-style2">Secret Answer*</td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="TxtSecretAnswer" runat="server" Width="180px" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="TxtSecretAnswer" runat="server" Width="180px"></asp:TextBox>
                         <asp:RequiredFieldValidator CssClass="ErrorMessage" ID="rfvSecretAnswer" runat="server" ErrorMessage="Secret Answer Required" ControlToValidate="TxtSecretAnswer"></asp:RequiredFieldValidator>
                     </td>
                 </tr>

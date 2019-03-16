@@ -34,6 +34,7 @@ namespace TechKnowPro
             DataTable dt = new DataTable();
             sda.Fill(dt);
             DBConnection.Close();
+            txtIncident.Text = "1000";
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow row in dt.Rows)
@@ -44,12 +45,12 @@ namespace TechKnowPro
             }
         }
 
-        protected void btbSubmit_Click(object sender, EventArgs e)
+        protected void btbSubmit_Click(object sender, EventArgs e) 
         {
             string user_id = ddlCustomer.SelectedValue.ToString();
             txtCustomerID.Text = user_id;
             string incidentQuery = "INSERT INTO Incidents(Customer_ID, Report_Date_Time, Incident_number, Status, Problem_Description, Contact_Method, Brief, Product) " +
-                "VALUES('" + user_id + "','" + DateTime.Now + "','" + txtIncident.Text + "','"
+                "VALUES('" + txtCustomerID.Text + "','" + DateTime.Now + "','" + txtIncident.Text + "','"
                 + ddlStatus.SelectedValue.ToString() + "','" + txtDescription.Text + "','" + 
                 rblContact.SelectedValue.ToString() + "','" + txtBrief.Text + "','" + txtProduct.Text.ToUpper() + "')";
             SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");

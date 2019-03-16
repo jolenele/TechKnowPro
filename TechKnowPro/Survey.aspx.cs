@@ -27,7 +27,7 @@ namespace TechKnowPro
                 foreach (DataRow row in dt.Rows)
                 {
                     lblCustomerID.Text = row["user_id"].ToString();
-                    lblCustomerID.
+                    //lblCustomerID.
                 }
             }
         }

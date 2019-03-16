@@ -15,11 +15,12 @@ namespace TechKnowPro
         protected void Page_Load(object sender, EventArgs e)
         {
             string email = Convert.ToString(Session["email"]);
+            TxtUserID.Text = Convert.ToString(Session["user_id"]);
             if (email != null)
             {
                 if (!IsPostBack)
                 {
-                    TxtUserID.Text = Convert.ToString(Session["id"]);
+                    //TxtUserID.Text = Convert.ToString(Session["id"]);
                     TxtUsername.Text = Convert.ToString(Session["username"]);
                     TxtEmail.Text = Convert.ToString(Session["email"]);
                     TxtPassword.Text = Convert.ToString(Session["password"]);
@@ -37,7 +38,7 @@ namespace TechKnowPro
 
         protected void BtnUpdate_Click(object sender, EventArgs e)
         {
-            string user_id = Convert.ToString(Session["id"]);
+            string user_id = Convert.ToString(Session["user_id"]);
             string username = TxtUsername.Text;
             string email = TxtEmail.Text;
             string password = TxtPassword.Text;
@@ -46,7 +47,7 @@ namespace TechKnowPro
             string secret_question = SecretQuestion.Text;
             string secret_answer = TxtSecretAnswer.Text;
             string address = TxtAddress.Text;
-            string query = "UPDATE Customers SET username ='" + username + "', email ='" + email + "', password ='" + password + "', first_name ='" + first_name + "', last_name ='" + last_name + "', secret_question ='" + secret_question + "', secret_answer ='" + secret_answer + "', address ='" + address + "' WHERE id ='" + user_id + "'";
+            string query = "UPDATE Customers SET username ='" + username + "', email ='" + email + "', password ='" + password + "', first_name ='" + first_name + "', last_name ='" + last_name + "', secret_question ='" + secret_question + "', secret_answer ='" + secret_answer + "', address ='" + address + "' WHERE user_id ='" + user_id + "'";
             SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
             DBConnection.Open();
             if (Page.IsValid)
