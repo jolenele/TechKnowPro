@@ -17,16 +17,22 @@ namespace TechKnowPro
             {
                 LblUsername.Text = "Hello " + username + " !";
                 if (email == "Admin")
-                    LblRole.Text = "Go to <a href='CustomerInfo.aspx'>Customers</a> section to search customer information";
+                {
+                    Lbl1.Text = "Go to <a href='CustomerInfo.aspx'>Customers</a> section to search customer information.";
+                    Lbl2.Text = "Go to <a href='ContactList.aspx'>Contact List</a> section to view list of customers who need contact.";
+                    Lbl3.Text = "Go to <a href='ViewSurvey.aspx'>View Survey</a> section to view customers' surveys.";
+                }
                 else if (email == "Technician")
                 {
-                    LblRole.Text = "Go to <a href='CreateIncident.aspx'>Incidents</a> to search and review client incident reports";
-                    LblToSurvey.Text = "Go to <a href='ViewIncident.aspx'>View Incidents</a> to search and review client incident reports";
+                    Lbl1.Text = "Go to <a href='CustomerInfo.aspx'>Customers</a> section to search customer information.";
+                    Lbl2.Text = "Go to <a href='ContactList.aspx'>Contact List</a> section to view list of customers who need contact.";
+                    Lbl3.Text = "Go to <a href='CreateIncident.aspx'>Incidents</a> to search and review client incident reports";
+                    Lbl4.Text = "Go to <a href='ViewIncident.aspx'>View Incidents</a> to search and review client incident reports";
                 }
                 else
                 {
-                    LblRole.Text = "Go to <a href='ProfilePage.aspx'>Profile</a> to update your profile and/or customer information";
-                    LblToSurvey.Text = "Go to <a href='Survey.aspx'>Survey</a> to do survey";
+                    Lbl1.Text = "Go to <a href='ProfilePage.aspx'>Profile</a> to update your profile.";
+                    Lbl2.Text = "Go to <a href='Survey.aspx'>Survey</a> to do survey";
                 }
             }
                 

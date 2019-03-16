@@ -40,21 +40,39 @@ namespace TechKnowPro {
         protected global::System.Web.UI.WebControls.Label LblUsername;
         
         /// <summary>
-        /// LblRole control.
+        /// Lbl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblRole;
+        protected global::System.Web.UI.WebControls.Label Lbl1;
         
         /// <summary>
-        /// LblToSurvey control.
+        /// Lbl2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblToSurvey;
+        protected global::System.Web.UI.WebControls.Label Lbl2;
+        
+        /// <summary>
+        /// Lbl3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl3;
+        
+        /// <summary>
+        /// Lbl4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl4;
     }
 }
