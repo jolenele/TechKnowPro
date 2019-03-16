@@ -12,7 +12,7 @@
             <h1>Survey Complete</h1>
             <p>Thank you for your feedback!</p>
             <p>A customer representative will contact you within 24hrs.</p>
-            <asp:Button ID="btnHome" runat="server" Text="Home" OnClick="btnReturn_Click"/>
+            <asp:Button ID="btnHome" runat="server" Text="Home" OnClick="btnHome_Click"/>
             <asp:Button ID="btnReturn" runat="server" Text="Return to Survey" OnClick="btnReturn_Click" />
         </div>
     </form>

@@ -87,20 +87,21 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:CheckBox ID="ckbContact" runat="server" Text="Please contact me to discuss this incident" />
+                        <asp:CheckBox ID="ckbContact" runat="server" Text="Please contact me to discuss this incident" AutoPostBack="True" OnCheckedChanged="ckbContact_CheckedChanged" />
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:RadioButtonList ID="rblContactMethod" runat="server" RepeatDirection="Horizontal">
-                            <asp:ListItem>Contact via Email</asp:ListItem>
-                            <asp:ListItem>Contact via phone</asp:ListItem>
+                        <asp:RadioButtonList ID="rblContactMethod" runat="server" RepeatDirection="Horizontal" AppendDataBoundItems="True" AutoPostBack="True" Visible="False">
+                            <asp:ListItem Value="email">Contact via Email</asp:ListItem>
+                            <asp:ListItem Value="phone">Contact via phone</asp:ListItem>
                         </asp:RadioButtonList>
                     </td>
                 </tr>
             </table>
         </div>
         <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click" />
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
     </form>
 </body>
 </html>
