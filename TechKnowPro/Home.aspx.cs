@@ -16,7 +16,7 @@ namespace TechKnowPro
             {
                 LblUsername.Text = email;
                 if (email == "Admin")
-                    LblRole.Text = "Go to Customers section to search customer information";
+                    LblRole.Text = "Go to <a href='CustomerInfo.aspx'>Customers</a> section to search customer information";
                 else if (email == "Technician")
                 {
                     LblRole.Text = "Go to <a href='CreateIncident.aspx'>Incidents</a> to search and review client incident reports";
