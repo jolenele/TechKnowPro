@@ -61,10 +61,10 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="BtbAddToContact" runat="server" Text="Add to Contact List" />
+                        <asp:Button ID="BtbAddToContact" runat="server" Text="Add to Contact List" OnClick="BtbAddToContact_Click" />
                     </td>
                     <td>
-                        <asp:Button ID="BtbDisplayContact" runat="server" Text="Display Contact List" />
+                        <asp:Button ID="BtbDisplayContact" runat="server" Text="Display Contact List" OnClick="BtbDisplayContact_Click" />
                     </td>
                 </tr>
             </table>

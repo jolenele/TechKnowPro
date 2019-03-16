@@ -64,5 +64,10 @@ namespace TechKnowPro
             cmd.ExecuteNonQuery();
             DBConnection.Close();
         }
+
+        protected void BtbDisplayContact_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ContactList.aspx");
+        }
     }
 }
