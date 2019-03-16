@@ -49,7 +49,7 @@ namespace TechKnowPro
                     {
                         cmd.ExecuteNonQuery();
                         DBConnection.Close();
-                        MailSend(inputemail);
+                        MailSend(inputfirstname,inputlastname,inputemail);
 
                         Session["email"] = inputemail;
 
@@ -101,11 +101,11 @@ namespace TechKnowPro
         public void MailSend(string email)
         {
             var fromAddress = new MailAddress("techknowpro.gbc@gmail.com", "TechKnowPro");
-            var toAddress = new MailAddress(email);
+            var toAddress = new MailAddress(first_name, last_name, email);
             const string fromPassword = "saobietduoc";
             string url = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + VirtualPathUtility.ToAbsolute("~/SuccessfulConfirmation.aspx");
             const string subject = "Confirmation Email";
-            string body = "This email has been used to create an account on TechKnowPro Service. \nClick this link to active your account. \n" +url+"?email="+email;
+            string body = "Dear " + first_name + " " + last_name + " !" + "\nThis email has been used to create an account on TechKnowPro Service. \nClick this link to active your account. \n" +url+"?email="+email;
 
             var smtp = new SmtpClient
             {
