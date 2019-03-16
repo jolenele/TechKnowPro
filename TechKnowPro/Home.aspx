@@ -20,9 +20,14 @@
             <asp:Label ID="LblUsername" runat="server" ViewStateMode="Enabled"></asp:Label>
         </p>
         <b>Getting Started<br />
-        </b>&nbsp;<asp:Label ID="LblRole" runat="server"></asp:Label>
+        </b>
+        <asp:Label ID="Lbl1" runat="server"></asp:Label>
         <br />
-        <asp:Label ID="LblToSurvey" runat="server"></asp:Label>
+        <asp:Label ID="Lbl2" runat="server"></asp:Label>
+        <br />
+        <asp:Label ID="Lbl3" runat="server"></asp:Label>
+        <br />
+        <asp:Label ID="Lbl4" runat="server"></asp:Label>
         <br />
     </form>
 </body>
