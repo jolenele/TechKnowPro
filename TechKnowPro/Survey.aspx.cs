@@ -14,7 +14,7 @@ namespace TechKnowPro
         protected void Page_Load(object sender, EventArgs e)
         {
             string id = Convert.ToString(Session["user_id"]);
-            lblCustomerID.Text = id;
+            TxtCustomerID.Text = id;
         }
         
         protected void BtnSubmit_Click(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace TechKnowPro
             else
                 contact = "no";
             string query = "INSERT INTO Surveys(customer_id, incident_id, response_time, technician_efficiency, problem_resolution, comments, contact_to_discuss, contact_method) " +
-                "VALUES('" + lblCustomerID.Text + "','" + ddlIncident.SelectedValue.ToString() + "','" + rblTime.SelectedValue.ToString() + "','" + rblEfficiency.SelectedValue.ToString() + "','" + rblResolution.SelectedValue.ToString() + "','" + 
+                "VALUES('" + TxtCustomerID.Text + "','" + ddlIncident.SelectedValue.ToString() + "','" + rblTime.SelectedValue.ToString() + "','" + rblEfficiency.SelectedValue.ToString() + "','" + rblResolution.SelectedValue.ToString() + "','" + 
                 txtComments.Text + "','" + contact + "','" + rblContactMethod.SelectedValue.ToString() + "')";
             SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
             DBConnection.Open();

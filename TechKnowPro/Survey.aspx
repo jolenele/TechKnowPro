@@ -43,12 +43,12 @@
                     <asp:Label ID="lblCustomer" runat="server" Text="Customer ID"></asp:Label>
                 </td>
                 <td>
-                    <asp:Label ID="lblCustomerID" runat="server" CssClass="readonly"></asp:Label>
+                    <asp:TextBox ID="TxtCustomerID" runat="server" CssClass="readonly" ReadOnly="True" Width="171px"></asp:TextBox>
                 </td>
             </tr>
         </table>
         <div>
-            <asp:DropDownList ID="ddlIncident" runat="server" Height="50px" Width="400px" OnSelectedIndexChanged="ddlIncident_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDStest" DataTextField="display" DataValueField="Id">
+            <asp:DropDownList ID="ddlIncident" runat="server" Height="50px" Width="500px" OnSelectedIndexChanged="ddlIncident_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDStest" DataTextField="display" DataValueField="Id">
                 <asp:ListItem Value="0">- Select an incident -</asp:ListItem>
             </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDStest" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
