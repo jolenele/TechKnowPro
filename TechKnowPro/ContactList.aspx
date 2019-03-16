@@ -6,10 +6,6 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            height: 111px;
-            width: 266px;
-        }
         .auto-style2 {
             width: 234px;
         }
@@ -27,15 +23,17 @@
         <table>
             <tr>
                 <td>
-                    <textarea id="TextArea1" class="auto-style1" name="S1"></textarea></td>
+                    <asp:ListBox ID="ContactListBox" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="contact" DataValueField="user_id" Height="109px" OnSelectedIndexChanged="ContactListBox_SelectedIndexChanged" Width="362px"></asp:ListBox>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT CONCAT(username, ' ', phone, ' ', email) AS contact, user_id FROM Contacts"></asp:SqlDataSource>
+                </td>
                 <td class="auto-style2">
-                    <asp:Button ID="BtbRemoveContact" runat="server" Text="Remove Contact" />
-                    <asp:Button ID="BtbEmptyList" runat="server" Text="Empty List" />
+                    <asp:Button ID="BtbRemoveContact" runat="server" Text="Remove Contact" OnClick="BtbRemoveContact_Click" />
+                    <asp:Button ID="BtbEmptyList" runat="server" Text="Empty List" OnClick="BtbEmptyList_Click" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="BtbSelectCust" runat="server" Text="Select Additional Customers" />
+                    <asp:Button ID="BtbSelectCust" runat="server" Text="Select Additional Customers" OnClick="BtbSelectCust_Click" />
                 </td>
             </tr>
             </table>
