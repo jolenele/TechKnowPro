@@ -34,8 +34,8 @@
                     <asp:DropDownList ID="ddlCustomer" runat="server" DataSourceID="SqlDataSourceCustomer" DataTextField="name" DataValueField="user_id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
                         <asp:ListItem Value="null">-- Select a Customer --</asp:ListItem>
                     </asp:DropDownList>
-
                     <asp:SqlDataSource ID="SqlDataSourceCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT user_id, CONCAT(first_name,' ',last_name) AS name FROM Customers"></asp:SqlDataSource>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="ddlCustomer" Display="Dynamic" ErrorMessage="You must select a customer" ValueToCompare="null" Operator="NotEqual"></asp:CompareValidator>
                 </td>
                 <td class="auto-style4">Report Date &amp; Time</td>
                 <td>
@@ -59,6 +59,7 @@
                 </td>
                 <td class="auto-style3">
                     <asp:TextBox ID="txtProduct" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvProduct" runat="server" ErrorMessage="Product Required" ControlToValidate="txtProduct"></asp:RequiredFieldValidator>
                 </td>
                 <td class="auto-style4">Status</td>
                 <td>
@@ -75,6 +76,7 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtBrief" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvBrief" runat="server" ErrorMessage="Brief Required" ControlToValidate="txtBrief"></asp:RequiredFieldValidator>
                 </td>
             </tr>
         </table>
@@ -82,6 +84,7 @@
             Description of Problem*</p>
         <p>
             <asp:TextBox ID="txtDescription" runat="server" Height="77px" TextMode="MultiLine" Width="1301px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvDescription" runat="server" ErrorMessage="You must write a short description." ControlToValidate="txtDescription"></asp:RequiredFieldValidator>
         </p>
         <table class="auto-style1">
             <tr>
@@ -92,6 +95,7 @@
                         <asp:ListItem>Phone</asp:ListItem>
                         <asp:ListItem>In Person</asp:ListItem>
                     </asp:RadioButtonList>
+                    <asp:RequiredFieldValidator ID="rfvListButton" runat="server" ControlToValidate="rblContact" ErrorMessage="You must select a method of contact."></asp:RequiredFieldValidator>
                 </td>
             </tr>
         </table>
