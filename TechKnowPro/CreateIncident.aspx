@@ -29,30 +29,37 @@
         </div>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style2">Select a customer</td>
+                <td class="auto-style2">Select a customer*</td>
                 <td class="auto-style3">
                     <asp:DropDownList ID="ddlCustomer" runat="server" DataSourceID="SqlDataSourceCustomer" DataTextField="name" DataValueField="Id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
+                        <asp:ListItem Value="null">-- Select a Customer --</asp:ListItem>
                     </asp:DropDownList>
+
                     <asp:SqlDataSource ID="SqlDataSourceCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Id, CONCAT(first_name,' ',last_name) AS name FROM Customers"></asp:SqlDataSource>
                 </td>
                 <td class="auto-style4">Report Date &amp; Time</td>
                 <td>
-                    <asp:TextBox ID="txtDateTime" runat="server" AutoPostBack="True"></asp:TextBox>
+                    <asp:TextBox ID="txtDateTime" runat="server" AutoPostBack="True" ReadOnly="true"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Customer ID</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtCustomerID" runat="server" AutoPostBack="True"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerID" runat="server" AutoPostBack="True" EnableViewState="False" ReadOnly="true"></asp:TextBox>
+
                 </td>
                 <td class="auto-style4">Incident #</td>
                 <td>
-                    <asp:TextBox ID="txtIncident" runat="server" AutoPostBack="True"></asp:TextBox>
+                    <asp:TextBox ID="txtIncident" runat="server" AutoPostBack="True" ReadOnly="true"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style2">
+                    <asp:Label ID="lblProduct" runat="server" Text="Product"></asp:Label>
+                </td>
+                <td class="auto-style3">
+                    <asp:TextBox ID="txtProduct" runat="server"></asp:TextBox>
+                </td>
                 <td class="auto-style4">Status</td>
                 <td>
                     <asp:DropDownList ID="ddlStatus" runat="server" Height="22px" Width="127px">
@@ -62,9 +69,17 @@
                     </asp:DropDownList>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="Label1" runat="server" Text="Brief"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtBrief" runat="server"></asp:TextBox>
+                </td>
+            </tr>
         </table>
         <p>
-            Description of Problem</p>
+            Description of Problem*</p>
         <p>
             <asp:TextBox ID="txtDescription" runat="server" Height="77px" TextMode="MultiLine" Width="1301px"></asp:TextBox>
         </p>
@@ -81,6 +96,7 @@
             </tr>
         </table>
         <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btbSubmit_Click" />
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
     </form>
 </body>
 </html>
