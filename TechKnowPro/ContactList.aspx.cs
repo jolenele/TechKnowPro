@@ -29,6 +29,7 @@ namespace TechKnowPro
             SqlCommand cmd = new SqlCommand(query, DBConnection);
             cmd.ExecuteNonQuery();
             DBConnection.Close();
+            Page.Response.Redirect("ContactList.aspx");
         }
 
         protected void BtbSelectCust_Click(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace TechKnowPro
             SqlCommand cmd = new SqlCommand(query, DBConnection);
             cmd.ExecuteNonQuery();
             DBConnection.Close();
-            //ContactListBox
+            Page.Response.Redirect("ContactList.aspx");
         }
     }
 }
