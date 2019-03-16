@@ -86,7 +86,7 @@
                 <tr>
                     <td class="auto-style2">
                         <asp:Button ID="BtnRegister" runat="server" Text="Register" OnClick="BtnRegister_Click" />
-                        <asp:Button ID="BtnCancel" runat="server" Text="Cancel" OnClick="BtnCancel_Click" CausesValidation="False" />
+                        <asp:Button ID="BtnCancel" runat="server" Text="Cancel" OnClick="BtnCancel_Click" />
                     </td>
                 </tr>
             </table>

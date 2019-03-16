@@ -27,13 +27,13 @@ namespace TechKnowPro
                 Session["username"] = "Admin";
                 Response.Redirect("Home.aspx");
             }
-            else if(inputemail == "tech@isp.net" && inputpassword == "p@ssword2")
+            if(inputemail == "tech@isp.net" && inputpassword == "p@ssword2")
             {
                 Session["email"] = "Technician";
                 Session["username"] = "Technician";
                 Response.Redirect("Home.aspx");
             }
-            else if (inputemail != "admin@isp.net" && inputemail != "tech@isp.net")
+            if (inputemail != "admin@isp.net" && inputemail != "tech@isp.net")
             {
                 string loginquery = "select * from Customers where email ='" + inputemail + "' and password ='" + inputpassword + "'";
                 SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
@@ -45,10 +45,9 @@ namespace TechKnowPro
                 DBConnection.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    
                     foreach (DataRow row in dt.Rows)
                     {
-                        string user_id = row["user_id"].ToString();
+                        string user_id = row["id"].ToString();
                         string username = row["username"].ToString();
                         string email = row["email"].ToString();
                         string password = row["password"].ToString();
@@ -57,8 +56,6 @@ namespace TechKnowPro
                         string secret_question = row["secret_question"].ToString();
                         string secret_answer = row["secret_answer"].ToString();
                         string address = row["address"].ToString();
-                        string phone = row["phone"].ToString();
-                        bool active = Convert.ToBoolean(row["email_confirm"]);
                         Session["user_id"] = user_id;
                         Session["username"] = username;
                         Session["email"] = inputemail;
@@ -68,17 +65,9 @@ namespace TechKnowPro
                         Session["secret_question"] = secret_question;
                         Session["secret_answer"] = secret_answer;
                         Session["address"] = row["address"].ToString();
-                        Session["phone"] = row["phone"].ToString();
-                        Session["is_active"] = active;
                     }
-                    bool is_active = Convert.ToBoolean(Session["is_active"]);
-                    if (is_active == true)
-                        Response.Redirect("Home.aspx");
-                    else
-                        errormessage.Text = "This account have not been confirmed yet.";
+                    Response.Redirect("Home.aspx");
                 }
-                else
-                    errormessage.Text = "Invalid Username or Password.";
             }
             else
             {

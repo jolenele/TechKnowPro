@@ -8,11 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="Label1" runat="server"></asp:Label>
-        </div>
-        <div>
-            <asp:Label ID="Label2" runat="server"></asp:Label>
+        <div><h1>Your account has been successfully created! An email has been sent to</h1>
         </div>
         <asp:Button ID="BtnGoBack" runat="server" OnClick="BtnGoBack_Click" Text="Go back to Login Page" />
     </form>
