@@ -60,6 +60,10 @@
     </table>
         <div>
             <p>Incident List</p>
+            <p>
+                <asp:ListBox ID="lbxIncidentList" runat="server" DataSourceID="SqlDSIncidentList" DataTextField="display" DataValueField="Id"   
+                    OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" OnTextChanged="ddlCustomer_SelectedIndexChanged" Width="405px"></asp:ListBox>
+            </p>
             <asp:RadioButtonList ID="rbtnIncidentList" runat="server" DataSourceID="SqlDSIncidentList" DataValueField="id" 
                 OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" OnTextChanged="ddlCustomer_SelectedIndexChanged" DataTextField="display"></asp:RadioButtonList>
             <asp:SqlDataSource ID="SqlDSIncidentList" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], concat('Incident for Product ',Product,', ',Status,', ',Report_Date_Time,' - ', Brief) as display FROM [Incidents] WHERE ([Customer_ID] = @Customer_ID)">

@@ -23,7 +23,8 @@ namespace TechKnowPro
 
         protected void btnRetrieve_Click(object sender, EventArgs e)
         {
-            string incident_id = rbtnIncidentList.SelectedValue.ToString();
+            //string incident_id = rbtnIncidentList.SelectedValue.ToString();
+            string incident_id = lbxIncidentList.SelectedValue.ToString();
             string query = "SELECT customer_id, Report_Date_Time, Incident_number, Status, Problem_Description FROM Incidents WHERE id ='" + incident_id + "'";
             SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
             DBConnection.Open();

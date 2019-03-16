@@ -44,20 +44,35 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">Select a customer</td>
-                <td class="auto-style3">
-                    <asp:DropDownList ID="DropDownList1" runat="server">
-                    </asp:DropDownList>
-                </td>
+            <td>
+                <asp:DropDownList ID="ddlCustomer" runat="server" ToolTip="- Select User -" Width="149px" DataSourceID="SqlDSSurveyList1" DataTextField="username" DataValueField="user_id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
+                    <asp:ListItem Value="0">- Select User -</asp:ListItem>
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDSSurveyList1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [user_id], [username] FROM [Customers]"></asp:SqlDataSource>
+                
+            </td>
                 <td class="auto-style4">Customer ID</td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerID" runat="server"></asp:TextBox>
                 </td>
             </tr>
         </table>
-        <p>Survey Listing</p>
-        <asp:DropDownList ID="DropDownList2" runat="server" Height="16px" Width="283px"></asp:DropDownList>
-        <br />
-        <asp:Button ID="Button1" runat="server" Text="Retrieve Survey Detail" />
+        <div>
+            <p>Survey Listing</p>
+            <p>
+                <asp:ListBox ID="lbxSurveyList" runat="server" DataSourceID="SDSSurveyList" DataTextField="surveyList" DataValueField="Id"   
+                    OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" OnTextChanged="ddlCustomer_SelectedIndexChanged" Width="405px"></asp:ListBox>
+               
+                <asp:SqlDataSource ID="SDSSurveyList" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                    SelectCommand="SELECT [surveys].[Id], concat('Survey result for incident ', [Incidents].[Incident_number]) as surveyList FROM [Surveys] inner join [incidents] on [surveys].[incident_id] = [incidents].[id] WHERE ([surveys].[Customer_ID] = @Customer_ID)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="txtCustomerID" Name="Customer_ID" PropertyName="Text" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+               
+            </p>
+            <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve Survey Details" OnClick="btnRetrieve_Click" />
+        </div>
         <div>
             <p>Customer Rating</p>
 
@@ -66,27 +81,27 @@
         <tr>
             <td class="auto-style5">Response Time</td>
             <td class="auto-style8">
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblTime" runat="server" ></asp:Label>
             </td>
             <td class="auto-style10">Contact to discuss Incident</td>
             <td>
-                <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblContact" runat="server" ></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Technician Efficiency</td>
             <td class="auto-style8">
-                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblEfficicency" runat="server" ></asp:Label>
             </td>
-            <td class="auto-style10">Preferred Contact Menthod</td>
+            <td class="auto-style10">Preferred Contact Method</td>
             <td>
-                <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblMethod" runat="server" ></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">Problem Resolution</td>
             <td class="auto-style8">
-                <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblResolution" runat="server" ></asp:Label>
             </td>
             <td class="auto-style10">&nbsp;</td>
             <td>&nbsp;</td>
@@ -94,11 +109,11 @@
         <tr>
             <td class="auto-style6">Additional Comments</td>
             <td class="auto-style7" colspan="3">
-                <asp:TextBox ID="TextBox2" runat="server" Height="45px" OnTextChanged="TextBox2_TextChanged" TextMode="MultiLine" Width="445px"></asp:TextBox>
+                <asp:TextBox ID="txtComment" runat="server" Height="45px" OnTextChanged="btnRetrieve_Click" TextMode="MultiLine" Width="445px"></asp:TextBox>
             </td>
         </tr>
     </table>
-            <asp:Button ID="Button2" runat="server" Text="Home" />
+            <asp:Button ID="btnHome" runat="server" Text="Home" OnClick="btnHome_Click" style="height: 26px" />
         </form>
 </body>
 </html>
