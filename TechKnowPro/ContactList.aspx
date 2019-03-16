@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
     <style type="text/css">
         .auto-style2 {
             width: 234px;
@@ -23,11 +24,12 @@
         <table>
             <tr>
                 <td>
-                    <asp:ListBox ID="ContactListBox" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="contact" DataValueField="user_id" Height="109px" OnSelectedIndexChanged="ContactListBox_SelectedIndexChanged" Width="362px"></asp:ListBox>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT CONCAT(username, ' ', phone, ' ', email) AS contact, user_id FROM Contacts"></asp:SqlDataSource>
+                    <asp:ListBox ID="ContactListBox" runat="server" DataSourceID="SqlDataSource1" DataTextField="contact" DataValueField="user_id" Height="109px" Width="362px" AutoPostBack="True"></asp:ListBox>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                        SelectCommand="SELECT CONCAT(username, ' ', phone, ' ', email) AS contact, user_id FROM Contacts"></asp:SqlDataSource>
                 </td>
                 <td class="auto-style2">
-                    <asp:Button ID="BtbRemoveContact" runat="server" Text="Remove Contact" OnClick="BtbRemoveContact_Click" />
+                    <asp:Button ID="BtbRemoveContact" runat="server" Text="Remove Contact" OnClick="BtbRemoveContact_Click" AutoPostBack="True" />
                     <asp:Button ID="BtbEmptyList" runat="server" Text="Empty List" OnClick="BtbEmptyList_Click" />
                 </td>
             </tr>
