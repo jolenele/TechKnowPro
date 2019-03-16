@@ -12,9 +12,10 @@ namespace TechKnowPro
         protected void Page_Load(object sender, EventArgs e)
         {
             string email = Convert.ToString(Session["email"]);
+            string username = Convert.ToString(Session["username"]);
             if (email != null)
             {
-                LblUsername.Text = email;
+                LblUsername.Text = "Hello " + username + " !";
                 if (email == "Admin")
                     LblRole.Text = "Go to <a href='CustomerInfo.aspx'>Customers</a> section to search customer information";
                 else if (email == "Technician")
@@ -35,8 +36,7 @@ namespace TechKnowPro
 
         protected void BtnLogout_Click(object sender, EventArgs e)
         {
-            Session.Remove("username");
-            Session.Remove("email");
+            Session.RemoveAll();
             Response.Redirect("LoginForm.aspx");
         }
     }
