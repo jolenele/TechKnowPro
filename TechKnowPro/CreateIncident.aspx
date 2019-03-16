@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -39,18 +40,18 @@
                 </td>
                 <td class="auto-style4">Report Date &amp; Time</td>
                 <td>
-                    <asp:TextBox ID="txtDateTime" runat="server" AutoPostBack="True" ReadOnly="true"></asp:TextBox>
+                    <asp:TextBox ID="txtDateTime" runat="server" AutoPostBack="True" ReadOnly="true" CssClass="readonly"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Customer ID</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtCustomerID" runat="server" AutoPostBack="True" EnableViewState="False" ReadOnly="true"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerID" runat="server" AutoPostBack="True" EnableViewState="False" ReadOnly="true" CssClass="readonly"></asp:TextBox>
 
                 </td>
                 <td class="auto-style4">Incident #</td>
                 <td>
-                    <asp:TextBox ID="txtIncident" runat="server" AutoPostBack="True" ReadOnly="true"></asp:TextBox>
+                    <asp:TextBox ID="txtIncident" runat="server" AutoPostBack="True" ReadOnly="true" CssClass="readonly"></asp:TextBox>
                 </td>
             </tr>
             <tr>

@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -42,7 +43,7 @@
                     <asp:Label ID="lblCustomer" runat="server" Text="Customer ID"></asp:Label>
                 </td>
                 <td>
-                    <asp:Label ID="lblCustomerID" runat="server"></asp:Label>
+                    <asp:Label ID="lblCustomerID" runat="server" CssClass="readonly"></asp:Label>
                 </td>
             </tr>
         </table>
