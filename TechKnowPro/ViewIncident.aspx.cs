@@ -41,14 +41,35 @@ namespace TechKnowPro
                     lblValueDateTime.Text = row["Report_Date_Time"].ToString();
                     lblValueIncident.Text = row["incident_number"].ToString();
                     lblDescription.Text = row["problem_description"].ToString();
-                    lblValueStatus.Text = row["status"].ToString();
+                    ddlStatus.Text = row["status"].ToString();
                 }
             }
         }
 
         protected void ddlCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //concat('Incident for Product ', Product, ', ', Status, ', ', Report_Date_Time, ' - ', Brief) as display
+            
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (ddlStatus.SelectedValue.ToString() != "default")
+            {
+                string query = "UPDATE Incidents SET status = '" + ddlStatus.SelectedValue.ToString() + "' WHERE id ='" + lbxIncidentList.SelectedValue + "'";
+                SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
+                DBConnection.Open();
+                SqlCommand cmd = new SqlCommand(query, DBConnection);
+                if (Page.IsValid)
+                {
+                    cmd.ExecuteNonQuery();
+                    DBConnection.Close();
+                }
+                lblError.Text = "";
+            }
+            else
+            {
+                lblError.Text = "You must select an eligible Status";
+            }
         }
     }
 }

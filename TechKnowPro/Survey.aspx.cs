@@ -19,29 +19,45 @@ namespace TechKnowPro
         
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            string contact = "";
-            if (ckbContact.Checked == true)
-                contact = "yes";
-            else
-                contact = "no";
-            string query = "INSERT INTO Surveys(customer_id, incident_id, response_time, technician_efficiency, problem_resolution, comments, contact_to_discuss, contact_method) " +
-                "VALUES('" + TxtCustomerID.Text + "','" + ddlIncident.SelectedValue.ToString() + "','" + rblTime.SelectedValue.ToString() + "','" + rblEfficiency.SelectedValue.ToString() + "','" + rblResolution.SelectedValue.ToString() + "','" + 
-                txtComments.Text + "','" + contact + "','" + rblContactMethod.SelectedValue.ToString() + "')";
-            SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
-            DBConnection.Open();
-            SqlCommand cmd = new SqlCommand(query, DBConnection);
-            if (Page.IsValid)
+            if (Convert.ToInt16(lbxIncident.SelectedValue) != 0)
             {
-                cmd.ExecuteNonQuery();
-                DBConnection.Close();
-                Response.Redirect("SurveyConfirmation.aspx");
+                string contact = "";
+                if (ckbContact.Checked == true)
+                    contact = "yes";
+                else
+                    contact = "no";
+                string query = "INSERT INTO Surveys(customer_id, incident_id, response_time, technician_efficiency, problem_resolution, comments, contact_to_discuss, contact_method) " +
+                    "VALUES('" + TxtCustomerID.Text + "','" + lbxIncident.SelectedValue.ToString() + "','" + rblTime.SelectedValue.ToString() + "','" + rblEfficiency.SelectedValue.ToString() + "','" + rblResolution.SelectedValue.ToString() + "','" +
+                    txtComments.Text + "','" + contact + "','" + rblContactMethod.SelectedValue.ToString() + "')";
+                string surveyChecked = "UPDATE Incidents SET survey = '" + 1 + "' WHERE id ='" + lbxIncident.SelectedValue + "'";
+                SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
+                DBConnection.Open();
+                SqlCommand cmd = new SqlCommand(query, DBConnection);
+                SqlCommand cmd2 = new SqlCommand(surveyChecked, DBConnection);
+                if (Page.IsValid)
+                {
+                    cmd.ExecuteNonQuery();
+                    cmd2.ExecuteNonQuery();
+                    DBConnection.Close();
+                    Response.Redirect("SurveyConfirmation.aspx");
+                }
             }
-
+            else
+            {
+                lblError.Text = "You must select one survey to complete!";
+            }
         }
 
-        protected void ddlIncident_SelectedIndexChanged(object sender, EventArgs e)
+        protected void lbxIncident_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(Convert.ToInt16(lbxIncident.SelectedValue) == 0)
+            {
+                lblError.Text = "You must select one survey to complete!";
+            }
+            else
+            {
+                lblError.Text = "";
+            }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

@@ -44,20 +44,23 @@
                 </td>
                 <td>
                     <asp:TextBox ID="TxtCustomerID" runat="server" CssClass="readonly" ReadOnly="True" Width="171px"></asp:TextBox>
+                    <asp:Label ID="lblError" runat="server"></asp:Label>
                 </td>
             </tr>
         </table>
         <div>
-            <asp:DropDownList ID="ddlIncident" runat="server" Height="50px" Width="500px" OnSelectedIndexChanged="ddlIncident_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDStest" DataTextField="display" DataValueField="Id">
+            <asp:ListBox ID="lbxIncident" runat="server"  OnSelectedIndexChanged="lbxIncident_SelectedIndexChanged" AutoPostBack="True" DataSourceID="DoSurvey" DataTextField="display" DataValueField="Id" Width="229px">
                 <asp:ListItem Value="0">- Select an incident -</asp:ListItem>
-            </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDStest" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-                SelectCommand="SELECT [Id], concat('Incident for Product ', Product, ', ', Status, ', ', Report_Date_Time, ' - ', Brief) as display FROM [Incidents] WHERE ([Customer_ID] = @Customer_ID)">
+            </asp:ListBox>
+            
+            <asp:SqlDataSource ID="DoSurvey" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                SelectCommand="SELECT [Id], concat('Incident for Product ',[Product],', ', [Status],', ', [Report_Date_Time],' - ', [Brief]) as display FROM [Incidents] WHERE (([Customer_ID] = @Customer_ID) AND ([Survey] = @Survey) AND ([Status] = @Status))">
                 <SelectParameters>
-                    <asp:SessionParameter Name="Customer_ID" SessionField="user_id" Type="String" />
+                    <asp:ControlParameter ControlID="TxtCustomerID" Name="Customer_ID" PropertyName="Text" Type="String" />
+                    <asp:Parameter DefaultValue="0" Name="Survey" Type="Int32" />
+                    <asp:Parameter DefaultValue="Closed" Name="Status" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            
         </div>
         <div>
             <p>Please rate this incident by the following catagories</p>

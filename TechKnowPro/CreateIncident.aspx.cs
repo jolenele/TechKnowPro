@@ -13,16 +13,6 @@ namespace TechKnowPro
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            char[] chars = "0123456789".ToCharArray();
-            Random random = new Random();
-            string code = "";
-            for (int i = 0; i < 4; i++)
-            {
-                code += chars[random.Next(chars.Length)].ToString();
-            }
-            txtIncident.Text = code;*/
-        
             txtCustomerID.Text = ddlCustomer.SelectedValue.ToString();
             txtDateTime.Text = DateTime.Now.ToString();
 
@@ -34,7 +24,7 @@ namespace TechKnowPro
             DataTable dt = new DataTable();
             sda.Fill(dt);
             DBConnection.Close();
-            txtIncident.Text = "1000";
+            txtIncident.Text = "1001";
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow row in dt.Rows)
@@ -49,10 +39,10 @@ namespace TechKnowPro
         {
             string user_id = ddlCustomer.SelectedValue.ToString();
             txtCustomerID.Text = user_id;
-            string incidentQuery = "INSERT INTO Incidents(Customer_ID, Report_Date_Time, Incident_number, Status, Problem_Description, Contact_Method, Brief, Product) " +
+            string incidentQuery = "INSERT INTO Incidents(Customer_ID, Report_Date_Time, Incident_number, Status, Problem_Description, Contact_Method, Brief, Product, Survey) " +
                 "VALUES('" + txtCustomerID.Text + "','" + DateTime.Now + "','" + txtIncident.Text + "','"
                 + ddlStatus.SelectedValue.ToString() + "','" + txtDescription.Text + "','" + 
-                rblContact.SelectedValue.ToString() + "','" + txtBrief.Text + "','" + txtProduct.Text.ToUpper() + "')";
+                rblContact.SelectedValue.ToString() + "','" + txtBrief.Text + "','" + txtProduct.Text.ToUpper() + "','" + 0 + "')";
             SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
             DBConnection.Open();
             SqlCommand cmd = new SqlCommand(incidentQuery, DBConnection);

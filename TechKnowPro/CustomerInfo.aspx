@@ -30,10 +30,11 @@
                 <tr>
                     <td class="auto-style2">Select a customer</td>
                     <td class="auto-style2">
-                        <asp:DropDownList ID="CustomerList" runat="server" DataSourceID="Customers" DataTextField="name" DataValueField="user_id" OnSelectedIndexChanged="CustomerList_SelectedIndexChanged" OnDataBinding="CustomerList_SelectedIndexChanged" OnLoad="CustomerList_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True" OnInit="CustomerList_SelectedIndexChanged">
+                        <asp:DropDownList ID="CustomerList" runat="server" DataSourceID="Customers" DataTextField="username" DataValueField="user_id" OnSelectedIndexChanged="CustomerList_SelectedIndexChanged" OnDataBinding="CustomerList_SelectedIndexChanged" OnLoad="CustomerList_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True" OnInit="CustomerList_SelectedIndexChanged">
                             <asp:ListItem Value="0">-Select a customer-</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="Customers" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT CONCAT(first_name,' ',last_name) AS name, user_id FROM Customers
+                        <asp:SqlDataSource ID="Customers" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                            SelectCommand="SELECT username, user_id FROM Customers
 "></asp:SqlDataSource>
                     </td>
                 </tr>
