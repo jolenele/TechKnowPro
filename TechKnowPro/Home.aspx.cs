@@ -18,21 +18,21 @@ namespace TechKnowPro
                 LblUsername.Text = "Hello " + username + " !";
                 if (email == "Admin")
                 {
-                    Lbl1.Text = "Go to <a href='CustomerInfo.aspx'>Customers</a> section to search customer information.";
-                    Lbl2.Text = "Go to <a href='ContactList.aspx'>Contact List</a> section to view list of customers who need contact.";
-                    Lbl3.Text = "Go to <a href='ViewSurvey.aspx'>View Survey</a> section to view customers' surveys.";
+                    LBCustomerInfo.Visible = true;
+                    LBContactList.Visible = true;
+                    LBViewSurvey.Visible = true;
                 }
                 else if (email == "Technician")
                 {
-                    Lbl1.Text = "Go to <a href='CustomerInfo.aspx'>Customers</a> section to search customer information.";
-                    Lbl2.Text = "Go to <a href='ContactList.aspx'>Contact List</a> section to view list of customers who need contact.";
-                    Lbl3.Text = "Go to <a href='CreateIncident.aspx'>Incidents</a> to search and review client incident reports";
-                    Lbl4.Text = "Go to <a href='ViewIncident.aspx'>View Incidents</a> to search and review client incident reports";
+                    LBCustomerInfo.Visible = true;
+                    LBContactList.Visible = true;
+                    LBCreateIncident.Visible = true;
+                    LBViewIncident.Visible = true;
                 }
                 else
                 {
-                    Lbl1.Text = "Go to <a href='ProfilePage.aspx'>Profile</a> to update your profile.";
-                    Lbl2.Text = "Go to <a href='Survey.aspx'>Survey</a> to do survey";
+                    LBProfile.Visible = true;
+                    LBSurvey.Visible = true;
                 }
             }
                 

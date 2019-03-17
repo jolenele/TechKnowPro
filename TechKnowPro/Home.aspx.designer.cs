@@ -49,30 +49,66 @@ namespace TechKnowPro {
         protected global::System.Web.UI.WebControls.Label Lbl1;
         
         /// <summary>
-        /// Lbl2 control.
+        /// LBProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl2;
+        protected global::System.Web.UI.WebControls.LinkButton LBProfile;
         
         /// <summary>
-        /// Lbl3 control.
+        /// LBSurvey control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl3;
+        protected global::System.Web.UI.WebControls.LinkButton LBSurvey;
         
         /// <summary>
-        /// Lbl4 control.
+        /// LBCustomerInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lbl4;
+        protected global::System.Web.UI.WebControls.LinkButton LBCustomerInfo;
+        
+        /// <summary>
+        /// LBContactList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LBContactList;
+        
+        /// <summary>
+        /// LBViewSurvey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LBViewSurvey;
+        
+        /// <summary>
+        /// LBCreateIncident control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LBCreateIncident;
+        
+        /// <summary>
+        /// LBViewIncident control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LBViewIncident;
     }
 }
