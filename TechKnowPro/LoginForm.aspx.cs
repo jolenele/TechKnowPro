@@ -15,7 +15,7 @@ namespace TechKnowPro
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            if (Request.Cookies["Cookie"].Values["email"] != null && Request.Cookies["Cookie"].Values["password"] != null)
+            if (Request.Cookies["Cookie"] != null )
             {
                 string inputemail = Request.Cookies["Cookie"].Values["email"];
                 string inputpassword = Request.Cookies["Cookie"].Values["password"];
