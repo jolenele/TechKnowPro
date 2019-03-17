@@ -69,7 +69,7 @@
                     <td class="auto-style4">
                         <asp:TextBox ID="TxtPassword" runat="server" Width="180px" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator CssClass="ErrorMessage" ID="rfvPassword" runat="server" ErrorMessage="Password Required" ControlToValidate="TxtPassword" Display="Dynamic"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TxtPassword" CssClass="ErrorMessage" Display="Dynamic" ErrorMessage="Password must be 6 - 12 characters in length, contain at least 1 uppercase letter and 1 special character" ValidationExpression="^(?=.*[A-Z])(?=.*[@$!%*#?&amp;])[A-Za-z\d@$!%*#?&amp;]{6,12}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TxtPassword" CssClass="ErrorMessage" Display="Dynamic" ErrorMessage="Password must be 6 - 12 characters in length, contain at least 1 uppercase letter and 1 special character" ValidationExpression="^(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,12}$"></asp:RegularExpressionValidator>
                     </td>
                 <tr>
                     <td class="auto-style2">Confirm Password*</td>
