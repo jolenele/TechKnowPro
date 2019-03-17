@@ -49,7 +49,8 @@
                 <asp:DropDownList ID="ddlCustomer" runat="server" ToolTip="- Select User -" Width="149px" DataSourceID="SqlDSSurveyList1" DataTextField="username" DataValueField="user_id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
                     <asp:ListItem Value="0">- Select User -</asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDSSurveyList1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [user_id], [username] FROM [Customers]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDSSurveyList1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                    SelectCommand="SELECT [user_id], [username] FROM [Customers]"></asp:SqlDataSource>
                 
             </td>
                 <td class="auto-style4">Customer ID</td>

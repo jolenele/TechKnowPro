@@ -51,10 +51,11 @@
         <tr>
             <td class="auto-style2">Select a customer</td>
             <td>
-                <asp:DropDownList ID="ddlCustomer" runat="server" ToolTip="- Select User -" Width="149px" DataSourceID="SqlDataSourceViewIncident" DataTextField="name" DataValueField="user_id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
+                <asp:DropDownList ID="ddlCustomer" runat="server" ToolTip="- Select User -" Width="149px" DataSourceID="SqlDataSourceViewIncident" DataTextField="username" DataValueField="user_id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
                     <asp:ListItem Value="0">- Select User -</asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSourceViewIncident" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [user_id], concat(first_name,' ', last_name) as name FROM [Customers]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSourceViewIncident" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                    SelectCommand="SELECT [user_id], [username] FROM [Customers]"></asp:SqlDataSource>
                 
             </td>
         </tr>
@@ -63,7 +64,7 @@
             <p>Incident List</p>
             <p>
                 <asp:ListBox ID="lbxIncidentList" runat="server" DataSourceID="SqlDSIncidentList" DataTextField="display" DataValueField="Id"   
-                    OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" OnTextChanged="ddlCustomer_SelectedIndexChanged" Width="405px"></asp:ListBox>
+                    OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" OnTextChanged="ddlCustomer_SelectedIndexChanged" Width="405px" AutoPostBack="True"></asp:ListBox>
             </p>
            <asp:SqlDataSource ID="SqlDSIncidentList" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], concat('Incident for Product ',Product,', ',Status,', ',Report_Date_Time,' - ', Brief) as display FROM [Incidents] WHERE ([Customer_ID] = @Customer_ID)">
                 <SelectParameters>
@@ -73,6 +74,7 @@
             <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve" OnClick="btnRetrieve_Click" />
         </div>
         <div>
+            <asp:Label ID="lblError" runat="server"></asp:Label>
             <br />
             <table class="auto-style1">
                 <tr>
@@ -111,7 +113,12 @@
                                     <asp:Label ID="lblStatus" runat="server" Text="Status:"></asp:Label>
                                 </td>
                                 <td class="auto-style11">
-                                    <asp:Label ID="lblValueStatus" runat="server"></asp:Label>
+                                    <asp:DropDownList ID="ddlStatus" runat="server" AutoPostBack="True">
+                                        <asp:ListItem Value="default">- Incident Status -</asp:ListItem>
+                                        <asp:ListItem>New</asp:ListItem>
+                                        <asp:ListItem>In Progress</asp:ListItem>
+                                        <asp:ListItem>Closed</asp:ListItem>
+                                    </asp:DropDownList>
                                 </td>
                             </tr>
                         </table>
@@ -124,6 +131,7 @@
             </table>
         </div>
         <asp:Button ID="btnHome" runat="server" Text="Home" OnClick="btnHome_Click" />
+        <asp:Button ID="btnUpdate" runat="server" Text="Update Status" OnClick="btnUpdate_Click" PostBackUrl="~/ViewIncident.aspx" />
     </form>
     
 </body>

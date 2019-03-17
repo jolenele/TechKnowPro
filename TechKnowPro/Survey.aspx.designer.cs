@@ -40,22 +40,31 @@ namespace TechKnowPro {
         protected global::System.Web.UI.WebControls.TextBox TxtCustomerID;
         
         /// <summary>
-        /// ddlIncident control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlIncident;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// SqlDStest control.
+        /// lbxIncident control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDStest;
+        protected global::System.Web.UI.WebControls.ListBox lbxIncident;
+        
+        /// <summary>
+        /// DoSurvey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource DoSurvey;
         
         /// <summary>
         /// rblTime control.
