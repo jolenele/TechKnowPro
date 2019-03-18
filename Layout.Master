@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="TechKnowPro.Layout" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>TechKnow Pro</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header style="background-color: #40676E">
+            <img src="img/logo.png" width="70" alt="Tech Know Pro" style="margin:0.5em;"/>
+            <i class ="pageTitle">TechKnow Pro - Incident Report Management Software</i>
+       </header>
+        <asp:ContentPlaceHolder ID="headPlaceHolder" runat="server">
+            <div class="nav">
+            <asp:Button ID="BtnLogout" runat="server" OnClick="BtnLogout_Click" Text="Log out" CssClass="btn logout_btn" CausesValidation="False" />
+            <asp:ImageButton ID="btnHome" AlternateText="Home" runat="server" ImageUrl="img/home.png" Width="35" CssClass="home_btn" OnClick="btnHome_Click" CausesValidation="False" />
+            </div>
+        </asp:ContentPlaceHolder>
+        <div class="body">
+            <main>
+                <h1><asp:Label ID="lblContentHeader" runat="server"></asp:Label></h1>
+                <asp:ContentPlaceHolder ID="bodyPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+        </div>
+        
+            <hr />
+        <footer class="footer">
+            <p>&reg; 2019 - Comp2139 - TechKnow Pro</p>
+        </footer>
+    </form>
+</body>
+</html>
