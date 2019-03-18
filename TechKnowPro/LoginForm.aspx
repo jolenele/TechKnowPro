@@ -51,7 +51,7 @@
                     <asp:ValidationSummary ID="validationsummary" runat="server" DisplayMode="List" ForeColor="White" />
 				</div>
                 <div class="form-group text-center">
-                    <asp:Button ID="BtnLogin" runat="server" Text="Login" CssClass="btn mx-auto login_btn" OnClick="BtnLogin_Click"/>
+                    <asp:Button ID="BtnLogin" runat="server" Text="Login" CssClass="login_btn" OnClick="BtnLogin_Click"/>
                 </div>
 			</div>
 			<div class="card-footer">

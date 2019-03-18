@@ -10,81 +10,69 @@
 namespace TechKnowPro {
     
     
-    public partial class CustomerInfo {
+    public partial class Layout {
         
         /// <summary>
-        /// CustomerList control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CustomerList;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// Customers control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Customers;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// LblAddress control.
+        /// headPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblAddress;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder headPlaceHolder;
         
         /// <summary>
-        /// LblPhone control.
+        /// BtnLogout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPhone;
+        protected global::System.Web.UI.WebControls.Button BtnLogout;
         
         /// <summary>
-        /// LblEmail control.
+        /// btnHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblEmail;
+        protected global::System.Web.UI.WebControls.ImageButton btnHome;
         
         /// <summary>
-        /// BtbAddToContact control.
+        /// lblContentHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtbAddToContact;
+        protected global::System.Web.UI.WebControls.Label lblContentHeader;
         
         /// <summary>
-        /// BtbDisplayContact control.
+        /// bodyPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtbDisplayContact;
-        
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new TechKnowPro.Layout Master {
-            get {
-                return ((TechKnowPro.Layout)(base.Master));
-            }
-        }
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder bodyPlaceHolder;
     }
 }

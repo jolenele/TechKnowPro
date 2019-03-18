@@ -13,15 +13,6 @@ namespace TechKnowPro {
     public partial class WebForm2 {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// ddlCustomer control.
         /// </summary>
         /// <remarks>
@@ -130,12 +121,15 @@ namespace TechKnowPro {
         protected global::System.Web.UI.WebControls.TextBox txtComment;
         
         /// <summary>
-        /// btnHome control.
+        /// Master property.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Auto-generated property.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
+        public new TechKnowPro.Layout Master {
+            get {
+                return ((TechKnowPro.Layout)(base.Master));
+            }
+        }
     }
 }

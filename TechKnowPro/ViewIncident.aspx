@@ -1,61 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewIncident.aspx.cs" Inherits="TechKnowPro.ViewIncident" %>
+﻿<%@ Page Title="View Incidents" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="ViewIncident.aspx.cs" Inherits="TechKnowPro.ViewIncident" %>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 130px;
-        }
-        .auto-style3 {
-            width: 434px;
-            height: 98px;
-        }
-        .auto-style4 {
-            width: 434px;
-            height: 23px;
-        }
-        .auto-style5 {
-            height: 23px;
-        }
-        .auto-style7 {
-            width: 151px;
-        }
-        .auto-style9 {
-            height: 98px;
-        }
-        .auto-style10 {
-            width: 151px;
-            height: 23px;
-        }
-        .auto-style11 {
-            width: 226px;
-        }
-        .auto-style12 {
-            width: 226px;
-            height: 23px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div><h1>View Incident</h1>
-        </div>
-        <table class="auto-style1">
+<asp:Content ID="viewIncidentBody" ContentPlaceHolderID="bodyPlaceHolder" runat="server">
+    <table class="auto-style1">
         <tr>
             <td class="auto-style2">Select a customer</td>
             <td>
-                <asp:DropDownList ID="ddlCustomer" runat="server" ToolTip="- Select User -" Width="149px" DataSourceID="SqlDataSourceViewIncident" DataTextField="username" DataValueField="user_id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
+                <asp:DropDownList ID="ddlCustomer" runat="server" ToolTip="- Select User -" Width="149px" DataSourceID="SqlDataSourceViewIncident" DataTextField="username" DataValueField="user_id" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged" AutoPostBack="True">
                     <asp:ListItem Value="0">- Select User -</asp:ListItem>
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSourceViewIncident" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-                    SelectCommand="SELECT [user_id], [username] FROM [Customers]"></asp:SqlDataSource>
+                    SelectCommand="SELECT [user_id], [username] FROM [Customers]" ConflictDetection="CompareAllValues"></asp:SqlDataSource>
                 
             </td>
         </tr>
@@ -71,7 +27,7 @@
                     <asp:ControlParameter ControlID="ddlCustomer" Name="Customer_ID" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve" OnClick="btnRetrieve_Click" />
+            <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve" OnClick="btnRetrieve_Click" CssClass="btn" />
         </div>
         <div>
             <asp:Label ID="lblError" runat="server"></asp:Label>
@@ -130,9 +86,6 @@
                 </tr>
             </table>
         </div>
-        <asp:Button ID="btnHome" runat="server" Text="Home" OnClick="btnHome_Click" />
-        <asp:Button ID="btnUpdate" runat="server" Text="Update Status" OnClick="btnUpdate_Click" PostBackUrl="~/ViewIncident.aspx" />
-    </form>
-    
-</body>
-</html>
+         <asp:Button ID="btnUpdate" runat="server" Text="Update Status" OnClick="btnUpdate_Click" PostBackUrl="~/ViewIncident.aspx" CssClass="btn"/>
+
+    </asp:Content>

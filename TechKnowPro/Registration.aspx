@@ -1,30 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="TechKnowPro.Registration" %>
+﻿<%@ Page Title="Sign up" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="TechKnowPro.Registration" %>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 135px;
-        }
-        .auto-style4 {
-            width: 464px;
-        }
-        .auto-style6 {
-            margin-left: 0px;
-        }
-    </style>
-</head>
-<body>
-    <h1>REGISTRATION PAGE</h1>
-    <asp:Label CssClass="ErrorMessage" ID="errormessage" runat="server" Text=""></asp:Label>
-    <form id="form1" runat="server">
+<asp:Content ID="SignupHead" ContentPlaceHolderID="headPlaceHolder" runat="server">
+</asp:Content>
+<asp:Content ID="SignupBody" ContentPlaceHolderID="bodyPlaceHolder" runat="server">
+<asp:Label CssClass="ErrorMessage" ID="errormessage" runat="server" Text=""></asp:Label>
         <div>
             <table class="auto-style1">
                 <tr>
@@ -85,12 +65,12 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="BtnRegister" runat="server" Text="Register" OnClick="BtnRegister_Click" />
-                        <asp:Button ID="BtnCancel" runat="server" Text="Cancel" OnClick="BtnCancel_Click" CausesValidation="False" />
+                        <asp:Button ID="BtnRegister" runat="server" Text="Sign up" OnClick="BtnRegister_Click" CssClass="btn"/>
+                        </td>
+                    <td>
+                        <asp:Button ID="BtnCancel" runat="server" Text="Cancel" OnClick="BtnCancel_Click" CausesValidation="False" CssClass="btn"/>
                     </td>
                 </tr>
             </table>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

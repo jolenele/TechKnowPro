@@ -13,17 +13,11 @@ namespace TechKnowPro
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Home.aspx");
+            
         }
 
         protected void btnRetrieve_Click(object sender, EventArgs e)
         {
-            //string incident_id = rbtnIncidentList.SelectedValue.ToString();
             string incident_id = lbxIncidentList.SelectedValue.ToString();
             string query = "SELECT customer_id, Report_Date_Time, Incident_number, Status, Problem_Description FROM Incidents WHERE id ='" + incident_id + "'";
             SqlConnection DBConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customers.mdf;Integrated Security=True");
@@ -35,14 +29,11 @@ namespace TechKnowPro
             DBConnection.Close();
             if (dt.Rows.Count > 0)
             {
-                foreach (DataRow row in dt.Rows)
-                {
-                    lblValueCustID.Text = row["customer_id"].ToString();
-                    lblValueDateTime.Text = row["Report_Date_Time"].ToString();
-                    lblValueIncident.Text = row["incident_number"].ToString();
-                    lblDescription.Text = row["problem_description"].ToString();
-                    ddlStatus.Text = row["status"].ToString();
-                }
+                lblValueCustID.Text = dt.Rows[0]["customer_id"].ToString();
+                lblValueDateTime.Text = dt.Rows[0]["Report_Date_Time"].ToString();
+                lblValueIncident.Text = dt.Rows[0]["incident_number"].ToString();
+                lblDescription.Text = dt.Rows[0]["problem_description"].ToString();
+                ddlStatus.Text = dt.Rows[0]["status"].ToString();
             }
         }
 

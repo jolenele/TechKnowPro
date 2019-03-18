@@ -18,9 +18,5 @@ namespace TechKnowPro
         {
             Response.Redirect("Survey.aspx"); 
         }
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Home.aspx");
-        }
     }
 }

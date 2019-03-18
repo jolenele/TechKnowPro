@@ -1,20 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SuccessfulConfirmation.aspx.cs" Inherits="TechKnowPro.SuccessfulConfirmation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Layout.Master" CodeBehind="SuccessfulConfirmation.aspx.cs" Inherits="TechKnowPro.SuccessfulConfirmation" %>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+
+<asp:Content ID="SuccessConfirmHead" ContentPlaceHolderID="headPlaceHolder" runat="server">
+</asp:Content>
+<asp:Content ID="SuccessConfirmBody" ContentPlaceHolderID="bodyPlaceHolder" runat="server">
+    <div>
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
         <div>
-            <asp:Button ID="BtnBack" runat="server" Text="Back to Login Page" OnClick="BtnBack_Click" />
+            <asp:Button ID="BtnBack" runat="server" Text="Back to Login Page" OnClick="BtnBack_Click" CssClass="btn"/>
         </div>
-    </form>
-</body>
-</html>
+  
+</asp:Content>

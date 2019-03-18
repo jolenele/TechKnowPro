@@ -1,21 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SurveyConfirmation.aspx.cs" Inherits="TechKnowPro.WebForm1" %>
+﻿<%@ Page Title="Survey completed!" MasterPageFile="~/Layout.Master" Language="C#" AutoEventWireup="true" CodeBehind="SurveyConfirmation.aspx.cs" Inherits="TechKnowPro.WebForm1" %>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <h1>Survey Complete</h1>
+<asp:Content ID="SurveyConfirmHead" ContentPlaceHolderID="headPlaceHolder" runat="server">
+</asp:Content>
+<asp:Content ID="SurveyConfirmBody" ContentPlaceHolderID="bodyPlaceHolder" runat="server">
+    <div>
             <p>Thank you for your feedback!</p>
             <p>A customer representative will contact you within 24hrs.</p>
-            <asp:Button ID="btnHome" runat="server" Text="Home" OnClick="btnHome_Click"/>
-            <asp:Button ID="btnReturn" runat="server" Text="Return to Survey" OnClick="btnReturn_Click" />
+            <asp:Button ID="btnReturn" runat="server" Text="Return to Survey" OnClick="btnReturn_Click" CssClass="btn"/>
         </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>

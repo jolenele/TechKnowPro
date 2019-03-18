@@ -1,33 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateIncident.aspx.cs" Inherits="TechKnowPro.WebForm3" %>
+﻿<%@ Page Title="Incident Report Page" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="CreateIncident.aspx.cs" Inherits="TechKnowPro.WebForm3" %>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 139px;
-        }
-        .auto-style3 {
-            width: 398px;
-        }
-        .auto-style4 {
-            width: 186px;
-        }
-        .auto-style5 {
-            width: 128px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div><h1>Incident Report Page</h1>
-        </div>
+<asp:Content ID="incidentBody" ContentPlaceHolderID="bodyPlaceHolder" runat="server">
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">Select a customer*</td>
@@ -101,8 +76,7 @@
                 </td>
             </tr>
         </table>
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btbSubmit_Click" />
-        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
-    </form>
-</body>
-</html>
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btbSubmit_Click" CssClass="btn" />
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel" CausesValidation="False" CssClass="btn" />
+
+</asp:Content>

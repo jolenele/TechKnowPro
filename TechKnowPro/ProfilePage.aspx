@@ -1,24 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProfilePage.aspx.cs" Inherits="TechKnowPro.ProfilePage" %>
+﻿<%@ Page Title="Account Profile" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="ProfilePage.aspx.cs" Inherits="TechKnowPro.ProfilePage" %>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-    <style type="text/css">
-        .auto-style2 {
-            width: 113px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <asp:Button ID="BtnLogout" runat="server" Text="Log out" />
-        <div>
-            <h1>TechKnow Pro - Incident Report Management Software</h1>
-            <h3>Account Profile</h3>
-        </div>
+<asp:Content ID="profileBody" ContentPlaceHolderID="bodyPlaceHolder" runat="server">
         <div>
             <h4>User Information</h4>
             <table>
@@ -102,10 +85,8 @@
         </div>
 
         <p>
-            <asp:Button ID="BtnUpdate" runat="server" Text="Update" OnClick="BtnUpdate_Click" />
-            <asp:Button ID="BtnCancel" runat="server" CausesValidation="False" OnClick="BtnCancel_Click" Text="Cancel" />
+            <asp:Button ID="BtnUpdate" runat="server" Text="Update" OnClick="BtnUpdate_Click" CssClass="btn"/>
+            <asp:Button ID="BtnCancel" runat="server" CausesValidation="False" OnClick="BtnCancel_Click" Text="Cancel" CssClass="btn"/>
         </p>
 
-    </form>
-</body>
-</html>
+</asp:Content>

@@ -79,6 +79,13 @@ input:focus {
     background-color: white;
 }
 
+.logout_btn{
+    float: right;
+}
+
+.home_btn{
+    margin:0.5em;
+}
 .links {
     color: white;
 }
@@ -92,14 +99,52 @@ input:focus {
 }
 
 .btn {
-    background-color: DodgerBlue;
-    border: none; 
-    color: white; 
-    padding: 12px 16px;
-    font-size: 16px; 
-    cursor: pointer; 
+    background-color: #71A596;
+    border: none;
+    color: white;
+    padding: 0.5em 0.8em;
+    margin: 0.5em 0.5em;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: RoyalBlue;
+    background-color: #ACD1B6;
+}
+
+.pageTitle {
+    color: white;
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align:middle;
+}
+.nav {
+    background-color: #A2C0A0;
+}
+
+.body {
+    width: 60%;
+    height: inherit;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    background-color: white;
+    margin: 2% 15%;
+    padding:2%;
+}
+.footer {
+    color: white;
+    background-color: #A2C0A0;
+    padding:1em;
+    clear: both;
+    position: relative;
+    height: 40px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.member{
+    margin-top:10%;
+}
+.welcome{
+    margin: 5% 0;
+    padding:2%;
 }

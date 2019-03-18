@@ -1,24 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="TechKnowPro.ForgotPassword" %>
+﻿<%@ Page Title="Reset Your Password" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="TechKnowPro.ForgotPassword" %>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 123px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="fogotPWHead" ContentPlaceHolderID="headPlaceHolder" runat="server">
+</asp:Content>
+<asp:Content ID="fogotPWBody" ContentPlaceHolderID="bodyPlaceHolder" runat="server">
         <div>
-            <h2>Reset Password</h2>
             <table class="auto-style1">
         <tr>
             <td class="auto-style2">Your email:</td>
@@ -29,16 +15,10 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:Button ID="BtnReset" runat="server" OnClick="BtnReset_Click" Text="Reset" />
+                <asp:Button ID="BtnReset" runat="server" OnClick="BtnReset_Click" Text="Reset" CssClass="btn"/>
             </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
     </table>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

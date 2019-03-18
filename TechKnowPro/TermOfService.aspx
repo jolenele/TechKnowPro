@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TermOfService.aspx.cs" Inherits="TechKnowPro.TermOfService" %>
-
-<!DOCTYPE html>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

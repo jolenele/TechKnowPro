@@ -1,41 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Survey.aspx.cs" Inherits="TechKnowPro.Survey" %>
+﻿<%@ Page Title="Surveys - Collect feedback from customers" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Survey.aspx.cs" Inherits="TechKnowPro.Survey" %>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 136px;
-        }
-        .auto-style4 {
-            width: 162px;
-        }
-        .auto-style5 {
-            width: 7px;
-        }
-        .auto-style6 {
-            width: 162px;
-            height: 31px;
-        }
-        .auto-style7 {
-            width: 7px;
-            height: 31px;
-        }
-        .auto-style8 {
-            height: 31px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <h2>Surveys - Collect feedback from customers</h2>
+<asp:Content ID="SurveyBody" ContentPlaceHolderID="bodyPlaceHolder" runat="server">
+   <div>
+            <h2></h2>
         </div>
         <table class="auto-style1">
             <tr>
@@ -133,8 +102,8 @@
                 </tr>
             </table>
         </div>
-        <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click" />
-        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel" CausesValidation="False" />
-    </form>
-</body>
-</html>
+        <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click" CssClass="btn"/>
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel" CausesValidation="False" CssClass="btn"/>
+
+
+</asp:Content>

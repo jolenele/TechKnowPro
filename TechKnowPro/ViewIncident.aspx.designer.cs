@@ -13,15 +13,6 @@ namespace TechKnowPro {
     public partial class ViewIncident {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// ddlCustomer control.
         /// </summary>
         /// <remarks>
@@ -157,15 +148,6 @@ namespace TechKnowPro {
         protected global::System.Web.UI.WebControls.Label lblDescription;
         
         /// <summary>
-        /// btnHome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
-        
-        /// <summary>
         /// btnUpdate control.
         /// </summary>
         /// <remarks>
@@ -173,5 +155,17 @@ namespace TechKnowPro {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpdate;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new TechKnowPro.Layout Master {
+            get {
+                return ((TechKnowPro.Layout)(base.Master));
+            }
+        }
     }
 }

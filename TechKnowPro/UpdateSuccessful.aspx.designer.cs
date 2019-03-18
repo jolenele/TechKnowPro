@@ -13,21 +13,15 @@ namespace TechKnowPro {
     public partial class WebForm4 {
         
         /// <summary>
-        /// form1 control.
+        /// Master property.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Auto-generated property.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// BtnHome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnHome;
+        public new TechKnowPro.Layout Master {
+            get {
+                return ((TechKnowPro.Layout)(base.Master));
+            }
+        }
     }
 }

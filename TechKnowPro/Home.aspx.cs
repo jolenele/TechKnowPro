@@ -39,12 +39,6 @@ namespace TechKnowPro
             else
                 LblUsername.Text = "You must log in first.";
         }
-
-        protected void BtnLogout_Click(object sender, EventArgs e)
-        {
-            Response.Cookies["Cookie"].Expires = DateTime.Now.AddDays(-1);
-            Session.RemoveAll();
-            Response.Redirect("LoginForm.aspx");
-        }
+        
     }
 }

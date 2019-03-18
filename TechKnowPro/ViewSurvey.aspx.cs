@@ -16,11 +16,6 @@ namespace TechKnowPro
             txtCustomerID.Text = ddlCustomer.SelectedValue.ToString();
         }
 
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Home.aspx");
-        }
-
         protected void btnRetrieve_Click(object sender, EventArgs e)
         {
             string survey_id = lbxSurveyList.SelectedValue.ToString();

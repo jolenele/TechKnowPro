@@ -1,17 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateSuccessful.aspx.cs" Inherits="TechKnowPro.WebForm4" %>
+﻿<%@ Page Title="Update Successfully!" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="UpdateSuccessful.aspx.cs" Inherits="TechKnowPro.WebForm4" %>
+<%@ MasterType VirtualPath="~/Layout.Master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div><h1>Update Successful</h1>
-        </div>
-        <asp:Button ID="BtnHome" runat="server" Text="Home" OnClick="BtnHome_Click" />
-    </form>
-</body>
-</html>
+
+<asp:Content ID="updateBody" ContentPlaceHolderID="bodyPlaceHolder" runat="server">
+
+</asp:Content>
